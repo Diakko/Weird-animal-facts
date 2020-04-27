@@ -40,7 +40,6 @@ body{
 .picturebox {
     transform: translate(50%, 50%);
     width: 50%;
-    border: 1px solid lightgray;
     text-align: center;
 
 }
