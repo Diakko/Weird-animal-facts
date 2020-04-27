@@ -31,7 +31,7 @@ body{
 }
 #middle {
     background-color: white;
-    width: 34%;
+    width: 33%;
     height: 100%;
 }
 #right {
@@ -47,6 +47,7 @@ body{
 }
 .navilinkit{
     position: relative;
+    display: block;
     width: 100%;
     color: #FFFFFF;
     text-align: center;
@@ -60,8 +61,8 @@ body{
 }
 .navi {
     text-align: center;
-    width: 33%;
-    display: inline-block;
+    width: 100%;
+    display: block;
     margin: auto;
     padding: 0;
     list-style: none;
