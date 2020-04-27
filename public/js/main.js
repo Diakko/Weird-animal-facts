@@ -7,7 +7,7 @@ const createPictureCards = (pictures) => {
     ul.innerHTML = '';
     pictures.forEach((picture) => {
         const img = document.createElement('img');
-        img.src = url + picture.filename;
+        img.src = url + '/' + picture.filename;
         img.alt = picture.name;
         img.classList.add('resp');
 
@@ -44,15 +44,9 @@ const createPictureCards = (pictures) => {
     });
 
 };
-const getPicture = async () => {
-    console.log('getpicture token ', sessionStorage.getItem('token'));
+const getPictures = async () => {
     try {
-        const options = {
-            headers: {
-                'Authorization': 'Bearer ' + sessionStorage.getItem('token'),
-            },
-        };
-        const response = await fetch(url + '/picture', options);
+        const response = await fetch(url + '/picture');
         const pictures = await response.json();
         createPictureCards(pictures);
     }
@@ -61,4 +55,4 @@ const getPicture = async () => {
     }
 };
 
-getPicture();
+getPictures();

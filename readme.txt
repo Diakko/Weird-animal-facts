@@ -1,4 +1,4 @@
-###Kaikki asennukset/Everytying you need run###
+### Kaikki asennukset/Everything you need run###
 
 npm init
 npm i
