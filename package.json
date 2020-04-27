@@ -1,0 +1,22 @@
+{
+  "name": "weirdanimals",
+  "version": "1.0.0",
+  "description": "package for weirdanimals website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Diakko/Weird-animal-facts.git"
+  },
+  "keywords": [
+    "node"
+  ],
+  "author": "matiassh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Diakko/Weird-animal-facts/issues"
+  },
+  "homepage": "https://github.com/Diakko/Weird-animal-facts#readme"
+}
