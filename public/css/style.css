@@ -43,6 +43,7 @@ body{
     transform: translate(50%, 50%);
     width: 50%;
     border: 1px solid lightgray;
+    text-align: center;
 
 }
 .navilinkit{
@@ -56,20 +57,19 @@ body{
     padding: 5px;
     border: #AF0000 groove 2px;
     border-radius: 5px;
-    margin: 5px;
     height: 100%;
 }
 .navi {
+    float: left;
+    box-sizing: border-box;
     text-align: center;
-    width: 100%;
+    width: 33%;
     display: block;
     margin: auto;
     padding: 0;
     list-style: none;
     height: 30px;
     background-color: olivedrab;
-}
-.navilista{
 }
 
 a {
@@ -80,7 +80,11 @@ a {
 }
 @media only screen and (max-width: 800px) {
     .navi{
+        height: 30px;
         width: 100%;
+    }
+    .navilista{
+        height: 90px;
     }
     .navilinkit {
         width: 100%;
@@ -93,7 +97,6 @@ a {
         width: 100%;
         float: none;
     }
-
     #right {
         width: 100%;
         float: none;
