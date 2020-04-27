@@ -18,5 +18,9 @@
   "bugs": {
     "url": "https://github.com/Diakko/Weird-animal-facts/issues"
   },
-  "homepage": "https://github.com/Diakko/Weird-animal-facts#readme"
+  "homepage": "https://github.com/Diakko/Weird-animal-facts#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mysql2": "^2.1.0"
+  }
 }

@@ -1,4 +1,5 @@
 'use strict';
+const promisePool = require('../database/db').promise();
 
 const getPicture = async (id) => {
     try {
