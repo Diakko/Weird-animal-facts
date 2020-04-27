@@ -2,22 +2,22 @@
 const url = 'http://localhost:3000';
 
 const ul = document.querySelector('ul');
-const createPictureCards = (pictures) => {
+const createPicCards = (pics) => {
     // Clear ul
     ul.innerHTML = '';
-    pictures.forEach((picture) => {
+    pics.forEach((pic) => {
         const img = document.createElement('img');
-        img.src = url + '/' + picture.filename;
-        img.alt = picture.name;
+        img.src = url + '/' + pic.filename;
+        img.alt = pic.name;
         img.classList.add('resp');
 
         /*// open large image when clicking image *TBD*
         img.addEventListener('click', () => {
-            modalImage.src = url + '/' + picture.filename;
-            imageModal.alt = picture.name;
+            modalImage.src = url + '/' + pic.filename;
+            imageModal.alt = pic.name;
             imageModal.classList.toggle('hide');
             try {
-                const coords = JSON.parse(picture.coords);
+                const coords = JSON.parse(pic.coords);
                 // console.log(coords);
                 addMarker(coords);
             }
@@ -27,10 +27,10 @@ const createPictureCards = (pictures) => {
         const figure = document.createElement('figure').appendChild(img);
 
         const h2 = document.createElement('h2');
-        h2.innerHTML = picture.title;
+        h2.innerHTML = pic.title;
 
         const p1 = document.createElement('p');
-        p1.innerHTML = `Desc: ${picture.description}`;
+        p1.innerHTML = `Desc: ${pic.description}`;
 
         
         const li = document.createElement('li');
@@ -44,15 +44,15 @@ const createPictureCards = (pictures) => {
     });
 
 };
-const getPictures = async () => {
+const getPics = async () => {
     try {
-        const response = await fetch(url + '/picture');
-        const pictures = await response.json();
-        createPictureCards(pictures);
+        const response = await fetch(url + '/pic');
+        const pics = await response.json();
+        createPicCards(pics);
     }
     catch (e) {
         console.log(e.message);
     }
 };
 
-getPictures();
+getPics();
