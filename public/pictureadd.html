@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add a picture</title>
+    <link href="css/pictureaddstyle.css" rel="stylesheet">
+</head>
+<body>
+<div>
+    <ul class="navilista">
+        <li class="navi"><a class="navilinkit" href="index.html">Etusivu</a></li>
+        <li class="navi"><a class="navilinkit" href="#">Lisää kuva</a></li>
+        <li class="navi"><a class="navilinkit" href="https://en.wikipedia.org/wiki/Special:Random">Random</a></li>
+    </ul>
+</div>
+<div class="form">
+    <div class="form-wrapper">
+        <h3>Add picture</h3>
+        <form class="light-border"
+              enctype="multipart/form-data"
+              id="add-picture-form">
+            <input class="light-border" type="text" name="title" placeholder="title" required>
+            <input class="light-border" type="number" name="description" placeholder="description" required>
+            <input class="light-border"
+                   type="file"
+                   name="picture"
+                   accept="image/*"
+                   placeholder="Choose file">
+            <button class="light-border" type="submit">Upload</button>
+        </form>
+    </div>
+</div>
+
+<script src="js/pictureadd.js"></script>
+
+</body>
+</html>
