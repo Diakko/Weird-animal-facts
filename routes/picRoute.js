@@ -1,62 +1,50 @@
 'use strict';
-const pool = require('../database/db');
-const promisePool = pool.promise();
+// picRoute
+const express = require('express');
+const router = express.Router();
+const {body, check} = require('express-validator');
+const multer = require('multer');
+const upload = multer({dest: './uploads/', fileFilter});
+const picController = require('../controllers/picController');
 
-const getAllPics = async () => {
-    try {
-        const [rows] = await promisePool.query('SELECT * FROM wop_pictures');
-        return rows;
-    } catch (e) {
-        console.error('error', e.message);
+function fileFilter (req, file, cb) {
+    console.log('filefilter', file);
+    // The function should call `cb` with a boolean
+    // to indicate if the file should be accepted
+
+    // To reject this file pass `false`, like so:
+    if (!file.mimetype.includes('image')) {
+        return cb(null, false, new Error('I don\'t have a clue!'));
+    } else {
+        // To accept the file pass `true`, like so:
+        cb(null, true);
     }
-};
-
-const getPic = async (id) => {
-    try {
-        const [rows] = await promisePool.query('SELECT * FROM wop_pictures WHERE pic_id = ?', [ id ]);
-        return rows[0];
-    }catch (e) {
-        console.error('error', e.message);
-    }
-};
-
-const insertPic = async (pic) => {
-    try {
-        console.log('insert pic?', pic);
-        const [rows] = await promisePool.query('INSERT INTO wop_pictures (title, description, filename) VALUES (?, ?, ?)',
-            [ pic.title, pic.description, pic.filename ]);
-        return rows;
-    } catch (e){
-        console.error('error', e.message);
-    }
-};
-const updatePic = async (pic) => {
-    try {
-        console.log('insert pic?', pic);
-        const [rows] = await promisePool.query('UPDATE wop_pic SET title = ?, description = ? WHERE wop_pic.pic_id = ?',
-            [ pic.title, pic.description, pic.id ]);
-        return rows;
-    } catch (e) {
-        console.error('updateCat model crash', e.message);
-    }
-};
-
-const deletePic = async (id) => {
-    try {
-        console.log('delete pic', id);
-        const [rows] = await promisePool.query('DELETE FROM wop_pic WHERE wop_pic.pic_id = ?', [ id ]);
-        console.log('deleted?', rows);
-        return rows;
-    } catch (e) {
-        console.error('deletePic model', e.message);
-    }
-};
-
-module.exports = {
-    getAllPics,
-    getPic,
-    insertPic,
-    deletePic,
-    updatePic,
 
 };
+
+router.get('/', picController.pic_list_get);
+
+router.get('/:id', picController.pic_get);
+
+router.post('/hack', (req, res) => {
+    res.send(req.body.search);
+});
+
+router.post('/',
+    upload.single('pic'),
+    [
+        body('title', 'No empty titles allowed').isLength({min: 1}),
+        body('Description', 'No empty descriptions allowed, 20 chars min').isLength({min: 20}),
+    ], (req, res) => {
+        console.log('tiedosto: ', req.file);
+        picController.pic_post(req, res);
+    });
+
+router.put('/', [
+    body('title', 'cannot be empty').isEmpty({min: 1}),
+    body('description', 'cannot be empty, 20 chars min').isNumeric().isLength({min: 20}),
+], picController.pic_put);
+
+router.delete('/:id', picController.pic_delete);
+
+module.exports = router;
