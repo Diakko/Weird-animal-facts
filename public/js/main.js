@@ -2,6 +2,7 @@
 const url = 'http://localhost:3000';
 
 const ul = document.querySelector('#picturecards');
+
 const createPicCards = (pics) => {
     // Clear ul
     ul.innerHTML = '';
@@ -44,6 +45,22 @@ const createPicCards = (pics) => {
     });
 
 };
+
+const addForm = document.querySelector('#addPictureForm');
+
+// submit add pic form
+addForm.addEventListener('submit', async (evt) => {
+    evt.preventDefault();
+    const fd = new FormData(addForm);
+    const fetchOptions = {
+        method: 'POST',
+        body: fd,
+    };
+    const response = await fetch(url + '/pic', fetchOptions);
+    const json = await response.json();
+    console.log('add response', json);
+    getPics();
+});
 
 // AJAX call
 const getPics = async () => {

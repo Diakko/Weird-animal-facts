@@ -1,11 +1,11 @@
 'use strict';
 const url = 'http://localhost:3000';
-const addPictureForm = document.querySelector('#addPictureForm');
+const addForm = document.querySelector('#addPictureForm');
 
 // submit add pic form
 addForm.addEventListener('submit', async (evt) => {
     evt.preventDefault();
-    const fd = new FormData(addPictureForm);
+    const fd = new FormData(addForm);
     const fetchOptions = {
         method: 'POST',
         body: fd,
@@ -13,7 +13,7 @@ addForm.addEventListener('submit', async (evt) => {
     const response = await fetch(url + '/pic', fetchOptions);
     const json = await response.json();
     console.log('add response', json);
-    getPics();
+    await getPics();
 });
 
 // AJAX call

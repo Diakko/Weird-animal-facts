@@ -1,7 +1,8 @@
 'use strict';
 const picModel = require('../models/picModel');
-
 const {validationResult} = require('express-validator');
+
+const pics = picModel.pics;
 
 const pic_list_get = async (req, res) => {
     const pics = await picModel.getAllPics();
@@ -10,7 +11,7 @@ const pic_list_get = async (req, res) => {
 
 const pic_get = async (req, res) => {
     console.log('pic id parameter', req.params);
-    const pic = await picModel.getpic(req.params.id);
+    const pic = await picModel.getPic(req.params.id);
     res.json(pic);
 };
 
@@ -32,7 +33,7 @@ const pic_post = async (req, res) => {
     try {
         const pic = await picModel.insertPic(params);
         console.log('inserted', pic);
-        res.send(`added cat: ${pic.insertId}`);
+        res.send(`added pic: ${pic.insertId}`);
     } catch (e) {
         console.error('problem with pic_post in picController', e);
         res.status(500).send(`database insert error: ${e.message}`);
@@ -42,7 +43,7 @@ const pic_post = async (req, res) => {
 const pic_put = async (req, res) => {
     console.log('pic_put', req.body);
 
-    const upPic = await picModel.updatepic(req.body);
+    const upPic = await picModel.updatePic(req.body);
     console.log('cat_put result from db', upPic);
     res.status(204).send();
 };
