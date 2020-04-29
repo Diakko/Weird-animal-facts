@@ -42,7 +42,6 @@ const createPicCards = (pics) => {
         li.appendChild(figure);
         li.appendChild(p1);
         ul.appendChild(li);
-
     });
 
 };
