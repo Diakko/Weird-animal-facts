@@ -34,7 +34,7 @@ router.post('/',
     upload.single('pic'),
     [
         body('title', 'No empty titles allowed').isLength({min: 1}),
-        body('Description', 'No empty descriptions allowed').isLength({min: 1}),
+        body('description', 'No empty descriptions allowed').isLength({min: 1}),
     ], (req, res) => {
         console.log('tiedosto: ', req.file);
         picController.pic_post(req, res);

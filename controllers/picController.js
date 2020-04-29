@@ -22,9 +22,11 @@ const pic_post = async (req, res) => {
     if(!req.file.mimetype.includes('image')){
         errors = [{msg: 'ei ole kuva'}];
     }
+    console.log('made it this far');
     if(!errors.isEmpty()){
         return res.status(422).json({errors: errors.array()});
     }
+    console.log('made it this far2');
     const params = {
         title: req.body.title,
         description: req.body.description,
