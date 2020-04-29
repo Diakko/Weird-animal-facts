@@ -2,7 +2,6 @@
 const picModel = require('../models/picModel');
 
 const {validationResult} = require('express-validator');
-const pics = picModel.pics;
 
 const pic_list_get = async (req, res) => {
     const pics = await picModel.getAllPics();

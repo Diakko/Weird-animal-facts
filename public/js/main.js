@@ -1,7 +1,7 @@
 'use strict';
 const url = 'http://localhost:3000';
 
-const ul = document.querySelector('ul');
+const ul = document.querySelector('#picturecards');
 const createPicCards = (pics) => {
     // Clear ul
     ul.innerHTML = '';
