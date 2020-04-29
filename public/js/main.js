@@ -35,7 +35,8 @@ const createPicCards = (pics) => {
 
         
         const li = document.createElement('li');
-        li.classList.add('light-border');
+        li.classList.add('light-border-picture');
+        li.classList.add('picturebox');
 
         li.appendChild(h2);
         li.appendChild(figure);

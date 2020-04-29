@@ -5,6 +5,18 @@
     font-family: 'Montserrat', sans-serif; /*Valitaan fontit, heittomerkeissä oleva on ensisijainen fontti*/
 }
 
+ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+a {
+    color: black;
+}
+
 html{
     height: 100%;
 }
@@ -20,6 +32,13 @@ body{
      padding: 1em;
      box-sizing: border-box;
  }
+.light-border-picture {
+    max-width: 30%;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    padding: 1em;
+    box-sizing: border-box;
+}
 
 .floatleft {
     float: left;
@@ -38,8 +57,7 @@ body{
 }
 
 .picturebox {
-    transform: translate(50%, 50%);
-    width: 50%;
+    margin: auto;
     text-align: center;
 
 }
@@ -71,13 +89,14 @@ body{
     height: 30px;
     background-color: olivedrab;
 }
+img {
+    max-width: 200px;
+}
 
-a {
-    color: black;
-}
-.picture{
-    width: 100%;
-}
+.container {
+     padding: 1em;
+ }
+
 @media only screen and (max-width: 800px) {
     .navi{
         height: 30px;

@@ -13,17 +13,4 @@ addForm.addEventListener('submit', async (evt) => {
     const response = await fetch(url + '/pic', fetchOptions);
     const json = await response.json();
     console.log('add response', json);
-    await getPics();
 });
-
-// AJAX call
-const getPics = async () => {
-    try {
-        const response = await fetch(url + '/pic');
-        const pics = await response.json();
-        createPicCards(pics);
-    }
-    catch (e) {
-        console.log(e.message);
-    }
-};
