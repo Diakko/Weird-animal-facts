@@ -1,2 +1,29 @@
+'use strict';
+const url = 'http://localhost:3000';
+const addPictureForm = document.querySelector('#addPictureForm');
 
-const addPictureForm = document.querySelector('#add-picture-form');
+// submit add pic form
+addForm.addEventListener('submit', async (evt) => {
+    evt.preventDefault();
+    const fd = new FormData(addPictureForm);
+    const fetchOptions = {
+        method: 'POST',
+        body: fd,
+    };
+    const response = await fetch(url + '/pic', fetchOptions);
+    const json = await response.json();
+    console.log('add response', json);
+    getPics();
+});
+
+// AJAX call
+const getPics = async () => {
+    try {
+        const response = await fetch(url + '/pic');
+        const pics = await response.json();
+        createPicCards(pics);
+    }
+    catch (e) {
+        console.log(e.message);
+    }
+};

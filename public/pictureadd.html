@@ -17,11 +17,13 @@
 <div class="form">
     <div class="form-wrapper">
         <h3>Add picture</h3>
-        <form class="light-border"
+        <form action="http://localhost:3000/pic"
+              method="post"
+              class="light-border"
               enctype="multipart/form-data"
-              id="add-picture-form">
+              id="addPictureForm">
             <input class="light-border" type="text" name="title" placeholder="title" required>
-            <input class="light-border" type="number" name="description" placeholder="description" required>
+            <input class="light-border" type="text" name="description" placeholder="description" required>
             <input class="light-border"
                    type="file"
                    name="picture"
@@ -32,7 +34,8 @@
     </div>
 </div>
 
-<script src="js/pictureadd.js"></script>
+<script src="./js/serialize.js"></script>
+<script src="./js/pictureadd.js"></script>
 
 </body>
 </html>

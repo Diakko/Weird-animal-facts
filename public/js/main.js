@@ -30,7 +30,7 @@ const createPicCards = (pics) => {
         h2.innerHTML = pic.title;
 
         const p1 = document.createElement('p');
-        p1.innerHTML = `Desc: ${pic.description}`;
+        p1.innerHTML = `<strong>Desc:</strong> ${pic.description}`;
 
         
         const li = document.createElement('li');
@@ -44,6 +44,8 @@ const createPicCards = (pics) => {
     });
 
 };
+
+// AJAX call
 const getPics = async () => {
     try {
         const response = await fetch(url + '/pic');
