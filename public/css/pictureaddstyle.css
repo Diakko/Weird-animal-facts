@@ -8,13 +8,21 @@
 html{
     height: 100%;
 }
+ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    flex-wrap: nowrap;
+}
 
 body{
+    background-color: blanchedalmond;
     height: 100%;
-    background-color: lightgray;
 }
 .navilinkit{
     position: relative;
+    display: block;
     width: 100%;
     color: #FFFFFF;
     text-align: center;
@@ -23,18 +31,25 @@ body{
     padding: 5px;
     border: #AF0000 groove 2px;
     border-radius: 5px;
-    margin: 5px;
     height: 100%;
 }
 .navi {
+    float: left;
+    box-sizing: border-box;
     text-align: center;
     width: 33%;
-    display: inline-block;
-    margin: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0;
+    margin-bottom: 0;
     padding: 0;
     list-style: none;
     height: 30px;
     background-color: olivedrab;
+}
+.navilista{
+    margin-bottom: 30px;
 }
 .forms {
      display: flex;
@@ -49,4 +64,21 @@ input, button{
     display: inline-block;
     width: 99%;
     margin: .5em 0;
+}
+
+@media only screen and (max-width: 800px) {
+    .navi{
+        margin: 0 0 0 0;
+        height: 30px;
+        width: 100%;
+    }
+    .navilista{
+        height: 90px;
+    }
+    .navilinkit {
+        width: 100%;
+    }
+    #navimiddle{
+        width: 100%
+    }
 }

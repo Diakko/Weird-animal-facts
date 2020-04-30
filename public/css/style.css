@@ -6,11 +6,6 @@
 }
 
 ul {
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
-    display: flex;
-    flex-wrap: nowrap;
 }
 
 a {
@@ -22,7 +17,9 @@ html{
 }
 img {
     max-width: 200px;
+    width: 90%;
     max-height: 130px;
+
 }
 
 body{
@@ -37,13 +34,17 @@ body{
      box-sizing: border-box;
  }
 .light-border-picture {
-    width: 30%;
+    display: block;
+    width: 31%;
     border-radius: 8px;
     border: 1px solid #ccc;
     padding: 1em;
     box-sizing: border-box;
     height: 400px;
     margin-bottom: 30px;
+    float: left;
+    margin-left: 1%;
+    margin-right: 1%;
 }
 
 .floatleft {
@@ -63,7 +64,6 @@ body{
 }
 
 .picturebox {
-    margin: auto;
     text-align: center;
 
 }
@@ -89,43 +89,73 @@ body{
     text-align: center;
     width: 33%;
     display: block;
-    margin: auto;
+    margin: 0 auto;
     padding: 0;
     list-style: none;
     height: 30px;
     background-color: olivedrab;
 }
 .navilista{
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    flex-wrap: nowrap;
     margin-bottom: 30px;
 }
 
 .container {
+
  }
 
 @media only screen and (max-width: 800px) {
-    .navi{
+
+    .navi {
         height: 30px;
         width: 100%;
     }
-    .navilista{
+
+    .navilista {
+        display: block;
         height: 90px;
     }
+
     .navilinkit {
         width: 100%;
     }
-    #navimiddle{
+
+    #navimiddle {
         width: 100%
     }
-    #left {
-        width: 100%;
-        float: none;
+    .light-border-picture {
+        width: 45%;
+        margin-left: 2.5%;
+        margin-right: 2.5%;
     }
-    #middle {
+
+}
+@media only screen and (max-width: 400px) {
+
+
+    .navi {
+        height: 30px;
         width: 100%;
-        float: none;
     }
-    #right {
+
+    .navilista {
+        display: block;
+        height: 90px;
+    }
+
+    .navilinkit {
         width: 100%;
-        float: none;
     }
+
+    #navimiddle {
+        width: 100%
+    }
+    .light-border-picture {
+         width: 85%;
+        margin-left: 7.5%;
+        margin-right: 7.5%;
+     }
 }
