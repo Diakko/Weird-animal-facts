@@ -20,6 +20,10 @@ a {
 html{
     height: 100%;
 }
+img {
+    max-width: 200px;
+    max-height: 130px;
+}
 
 body{
     background-color: blanchedalmond;
@@ -33,11 +37,13 @@ body{
      box-sizing: border-box;
  }
 .light-border-picture {
-    max-width: 30%;
+    width: 30%;
     border-radius: 8px;
     border: 1px solid #ccc;
     padding: 1em;
     box-sizing: border-box;
+    height: 252px;
+    margin-bottom: 30px;
 }
 
 .floatleft {
@@ -89,12 +95,11 @@ body{
     height: 30px;
     background-color: olivedrab;
 }
-img {
-    max-width: 200px;
+.navilista{
+    margin-bottom: 30px;
 }
 
 .container {
-     padding: 1em;
  }
 
 @media only screen and (max-width: 800px) {

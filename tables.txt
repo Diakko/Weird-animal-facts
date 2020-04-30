@@ -1,0 +1,15 @@
+CREATE TABLE `wop_pictures` (
+  `pic_id` int(11) NOT NULL,
+  `title` text NOT NULL,
+  `description` text NOT NULL,
+  `filename` text NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+ALTER TABLE `wop_pictures`
+  ADD PRIMARY KEY (`pic_id`);
+
+INSERT INTO `wop_pictures` (`pic_id`, `title`, `description`, `filename`) VALUES
+(1, 'Cat', 'Cats do _not_ like their owners breakable stuff on high levels', 'http://placekitten.com/400/300');
+
+ALTER TABLE `wop_pictures`
+  MODIFY `pic_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
