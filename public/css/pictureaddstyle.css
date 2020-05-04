@@ -75,6 +75,39 @@ input, button{
     margin: .5em 0;
 }
 
+.light-border {
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    padding: 1em;
+    box-sizing: border-box;
+}
+
+.hide {
+    display: none;
+}
+.show {
+    display: block;
+}
+.dropdown_content {
+    display: none;
+    position: absolute;
+    width: 100%;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1;
+    color: #000000;
+    background-color: #F3F3F3;
+    right: 1px;
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown:hover .dropdown_content {
+    display: block;
+}
+
 @media only screen and (max-width: 800px) {
     .navi{
         margin: 0 0 0 0;

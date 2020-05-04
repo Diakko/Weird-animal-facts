@@ -12,7 +12,47 @@
         <ul class="navilista">
             <li class="navi"><a class="navilinkit" href="#">Etusivu</a></li>
             <li class="navi" id="navimiddle"><a class="navilinkit" href="pictureadd.html">Lisää kuva</a></li>
-            <li class="navi"><a class="navilinkit" href="login.html">Login</a></li>
+            <li class="navi navilinkit dropdown"><a class="navilinkit" href="#">Login/Register</a>
+                <div class="dropdown_content hide">
+                    <h3>Login</h3>
+                    <form id="login-form" class="light-border">
+                        <div>
+                            <label>Email:</label><br>
+                            <input class="light-border" type="text" name="username"/>
+                        </div>
+                        <div>
+                            <label>Password:</label><br>
+                            <input class="light-border" type="password" name="password"/>
+                        </div><br>
+                        <div>
+                            <button class="light-border" type="submit">Log In</button>
+                        </div>
+                    </form>
+                    <h3>Register</h3>
+                    <form class="light-border" id="add-user-form">
+
+                        <div>
+                            <label>Username:</label><br>
+                            <input class="light-border"
+                                   type="text"
+                                   name="name"
+                                   pattern=".{3,}"
+                                   placeholder="Name"
+                                   required>
+                        </div>
+                        <div>
+                            <label>Email:</label><br>
+                            <input class="light-border" type="email" name="username" placeholder="email" required>
+                        </div>
+                        <div>
+                            <label>Password:</label><br>
+                            <input class="light-border" type="password" name="password" pattern="(?=.*[A-Z]).{8,}"
+                                   placeholder="Password" required>
+                        </div><br>
+                        <button class="light-border" type="submit">Save</button>
+                    </form>
+                </div>
+            </li>
         </ul>
     </div>
 
