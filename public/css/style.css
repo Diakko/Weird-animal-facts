@@ -23,7 +23,7 @@ img {
 }
 
 body{
-    background-color: blanchedalmond;
+    background-color: #9e7f4f;
     height: 100%;
 }
 
@@ -79,7 +79,7 @@ body{
     box-sizing: border-box;
     /* float: left;*/
     padding: 5px;
-    border: #AF0000 groove 2px;
+    border: #263e0e groove 2px;
     border-radius: 5px;
     height: 100%;
 }
@@ -93,7 +93,7 @@ body{
     padding: 0;
     list-style: none;
     height: 30px;
-    background-color: olivedrab;
+    background-color: #748e40;
 }
 .navilista{
     padding: 0;
