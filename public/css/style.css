@@ -98,6 +98,9 @@ body{
     height: 30px;
     background-color: #00792C;
 }
+.navi:hover:not(.active) {
+    background-color: #00521e;
+  }
 .navilista{
     padding: 0;
     list-style-type: none;

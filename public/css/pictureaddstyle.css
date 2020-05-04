@@ -20,6 +20,11 @@ body{
     background-color: #F3F3F3;
     height: 100%;
 }
+#navimiddle{
+    width: 34%;
+    border: black;
+}
+
 .navilinkit{
     position: relative;
     display: block;
@@ -48,6 +53,9 @@ body{
     height: 30px;
     background-color: #00792C;
 }
+.navi:hover:not(.active) {
+    background-color: #00521e;
+  }
 .navilista{
     margin-bottom: 30px;
 }
