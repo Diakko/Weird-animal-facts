@@ -37,7 +37,7 @@ const insertUser = async (user) => {
 const updateUser = async (user) => {
   try {
     console.log('insert user?', user);
-    const [rows] = await promisePool.query('UPDATE wop_user SET name = ?, email = ?, password = ? WHERE wop_users.user_id = ?', [ user.name, user.email, user.passwd, user.id ]);
+    const [rows] = await promisePool.query('UPDATE wop_user SET name = ?, email = ?, password = ? WHERE wop_user.user_id = ?', [ user.name, user.email, user.passwd, user.id ]);
     return rows;
   } catch (e) {
     console.error('updateUser model crash', e.message);
