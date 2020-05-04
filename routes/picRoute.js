@@ -35,6 +35,7 @@ router.post('/',
     [
         body('title', 'No empty titles allowed').isLength({min: 1}),
         body('description', 'No empty descriptions allowed, max 160').isLength({min: 1, max: 220}),
+        body('user', 'Must choose user').isLength({min: 1})
     ], (req, res) => {
         console.log('tiedosto: ', req.file);
         picController.pic_post(req, res);
@@ -43,6 +44,7 @@ router.post('/',
 router.put('/', [
     body('title', 'cannot be empty').isEmpty({min: 1}),
     body('description', 'cannot be empty').isNumeric().isLength({min: 1, max: 220}),
+    body('user', 'must be number').isNumeric().isLength({min: 1}),
 ], picController.pic_put);
 
 router.delete('/:id', picController.pic_delete);

@@ -23,8 +23,8 @@ const getPic = async (id) => {
 const insertPic = async (pic) => {
     try {
         console.log('insert pic?', pic);
-        const [rows] = await promisePool.query('INSERT INTO wop_pictures (title, description, filename) VALUES (?, ?, ?)',
-            [ pic.title, pic.description, pic.filename ]);
+        const [rows] = await promisePool.query('INSERT INTO wop_pictures (title, description, filename, user) VALUES (?, ?, ?, ?)',
+            [ pic.title, pic.description, pic.filename, pic.user]);
         return rows;
     } catch (e){
         console.error('error', e.message);
@@ -33,8 +33,8 @@ const insertPic = async (pic) => {
 const updatePic = async (pic) => {
     try {
         console.log('insert pic?', pic);
-        const [rows] = await promisePool.query('UPDATE wop_pic SET title = ?, description = ? WHERE wop_pic.pic_id = ?',
-            [ pic.title, pic.description, pic.id ]);
+        const [rows] = await promisePool.query('UPDATE wop_pictures SET title = ?, description = ?, user = ? WHERE wop_pic.pic_id = ?',
+            [ pic.title, pic.description, pic.user, pic.id ]);
         return rows;
     } catch (e) {
         console.error('updatePic model crash', e.message);
@@ -44,7 +44,7 @@ const updatePic = async (pic) => {
 const deletePic = async (id) => {
     try {
         console.log('delete pic', id);
-        const [rows] = await promisePool.query('DELETE FROM wop_pic WHERE wop_pic.pic_id = ?', [ id ]);
+        const [rows] = await promisePool.query('DELETE FROM wop_pictures WHERE wop_pic.pic_id = ?', [ id ]);
         console.log('deleted?', rows);
         return rows;
     } catch (e) {
@@ -58,5 +58,4 @@ module.exports = {
     insertPic,
     deletePic,
     updatePic,
-
 };

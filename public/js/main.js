@@ -46,8 +46,6 @@ const createPicCards = (pics) => {
 
 };
 
-
-
 // AJAX call
 const getPics = async () => {
     try {
@@ -59,5 +57,7 @@ const getPics = async () => {
         console.log(e.message);
     }
 };
+
+
 
 getPics();

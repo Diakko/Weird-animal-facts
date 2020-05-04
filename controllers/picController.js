@@ -31,6 +31,7 @@ const pic_post = async (req, res) => {
         title: req.body.title,
         description: req.body.description,
         filename: req.file.filename,
+        user: req.body.user,
     };
     try {
         const pic = await picModel.insertPic(params);
