@@ -59,12 +59,7 @@ const createPicCards = (pics) => {
 const getPics = async () => {
     console.log('getPic token ', sessionStorage.getItem('token'));
     try {
-        const options = {
-            headers: {
-                'Authorization': 'Bearer ' + sessionStorage.getItem('token'),
-            },
-        };
-        const response = await fetch(url + '/pic', options);
+        const response = await fetch(url + '/pic');
         const pics = await response.json();
         createPicCards(pics);
     }
