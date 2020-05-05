@@ -4,7 +4,7 @@ const promisePool = pool.promise();
 
 const getAllPics = async () => {
     try {
-        const [rows] = await promisePool.query('SELECT * FROM wop_pictures');
+        const [rows] = await promisePool.query('SELECT pic_id, wop_pictures.title, description, user, filename, user_id, wop_user.name AS user FROM wop_pictures LEFT JOIN wop_user ON user = user_id');
         return rows;
     } catch (e) {
         console.error('error', e.message);

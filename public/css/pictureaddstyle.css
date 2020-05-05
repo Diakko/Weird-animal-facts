@@ -1,13 +1,3 @@
-* {
-    outline: none; /*Siniset ääriviivat pois sivustolta*/
-    padding: 0; /*Selaimen oma automaattinen padding nollaan*/
-    margin: 0;
-    font-family: 'Montserrat', sans-serif; /*Valitaan fontit, heittomerkeissä oleva on ensisijainen fontti*/
-}
-
-html{
-    height: 100%;
-}
 ul {
     margin: 0;
     padding: 0;
@@ -16,49 +6,7 @@ ul {
     flex-wrap: nowrap;
 }
 
-body{
-    background-color: #F3F3F3;
-    height: 100%;
-}
-#navimiddle{
-    width: 34%;
-    border: black;
-}
 
-.navilinkit{
-    position: relative;
-    display: block;
-    width: 100%;
-    color: #FFFFFF;
-    text-align: center;
-    box-sizing: border-box;
-    /* float: left;*/
-    padding: 5px;
-    border: #00892A groove 2px;
-    border-radius: 5px;
-    height: 100%;
-}
-.navi {
-    float: left;
-    box-sizing: border-box;
-    text-align: center;
-    width: 33%;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 0;
-    margin-bottom: 0;
-    padding: 0;
-    list-style: none;
-    height: 30px;
-    background-color: #00792C;
-}
-.navi:hover:not(.active) {
-    background-color: #00521e;
-  }
-.navilista{
-    margin-bottom: 30px;
-}
 .forms {
      display: flex;
      flex-wrap: wrap;
@@ -73,54 +21,4 @@ input, button{
     display: inline-block;
     width: 99%;
     margin: .5em 0;
-}
-
-.light-border {
-    border-radius: 8px;
-    border: 1px solid #ccc;
-    padding: 1em;
-    box-sizing: border-box;
-}
-
-.hide {
-    display: none;
-}
-.show {
-    display: block;
-}
-.dropdown_content {
-    display: none;
-    position: absolute;
-    width: 80%;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    padding: 12px 16px;
-    z-index: 1;
-    color: #000000;
-    background-color: #F3F3F3;
-    right: 1px;
-}
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
-
-.dropdown:hover .dropdown_content {
-    display: block;
-}
-
-@media only screen and (max-width: 800px) {
-    .navi{
-        margin: 0 0 0 0;
-        height: 30px;
-        width: 100%;
-    }
-    .navilista{
-        height: 90px;
-    }
-    .navilinkit {
-        width: 100%;
-    }
-    #navimiddle{
-        width: 100%
-    }
 }

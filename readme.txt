@@ -9,3 +9,5 @@ npm i multer
 npm i cors
 npm i express-validator
 npm i loader
+npm i passport passport-local passport-jwt jsonwebtoken
+npm i bcryptjs

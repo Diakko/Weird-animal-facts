@@ -5,11 +5,11 @@
     font-family: 'Montserrat', sans-serif; /*Valitaan fontit, heittomerkeissä oleva on ensisijainen fontti*/
 }
 
-ul {
-}
-
 a {
     color: black;
+}
+input{
+    max-width: 95%;
 }
 
 html{
@@ -43,12 +43,13 @@ body{
     border: 1px solid #ccc;
     padding: 1em;
     box-sizing: border-box;
-    height: 500px;
+    height: 550px;
     margin-bottom: 30px;
     float: left;
     margin-left: 1%;
     margin-right: 1%;
 }
+
 
 .floatleft {
     float: left;
@@ -98,6 +99,19 @@ body{
     height: 30px;
     background-color: #00792C;
 }
+.navi-logout-wrapper {
+    float: left;
+    box-sizing: border-box;
+    text-align: center;
+    width: 33%;
+    display: none;
+    margin: 0 auto;
+    padding: 0;
+    list-style: none;
+    height: 30px;
+    background-color: #00792C;
+}
+
 .navi:hover:not(.active) {
     background-color: #00521e;
   }
@@ -134,7 +148,6 @@ body{
 }
 .dropdown {
     position: relative;
-    display: inline-block;
 }
 
 .dropdown:hover .dropdown_content {

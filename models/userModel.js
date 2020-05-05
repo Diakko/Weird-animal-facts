@@ -2,10 +2,6 @@
 //const pool = require('../database/db');
 const promisePool = require('../database/db').promise();
 
-/*
-####TARKISTAKAA SQL LAUSEET####
-*/
-
 const getAllUsers = async () => {
   try {
     const [rows] = await promisePool.query('SELECT user_id, name, email FROM wop_user');
@@ -27,7 +23,7 @@ const getUser = async (id) => {
 const insertUser = async (user) => {
   try {
     console.log('insert user?', user);
-    const [rows] = await promisePool.query('INSERT INTO wop_user (name, email, password) VALUES (?, ?, ?)', [ user.name, user.email, user.passwd ]);
+    const [rows] = await promisePool.query('INSERT INTO wop_user (name, email, password) VALUES (?, ?, ?)', [ user.name, user.email, user.password ]);
     return rows;
   } catch (e) {
     console.error('error', e.message);
@@ -37,7 +33,7 @@ const insertUser = async (user) => {
 const updateUser = async (user) => {
   try {
     console.log('insert user?', user);
-    const [rows] = await promisePool.query('UPDATE wop_user SET name = ?, email = ?, password = ? WHERE wop_user.user_id = ?', [ user.name, user.email, user.passwd, user.id ]);
+    const [rows] = await promisePool.query('UPDATE wop_user SET name = ?, email = ?, password = ? WHERE wop_user.user_id = ?', [ user.name, user.email, user.password, user.id ]);
     return rows;
   } catch (e) {
     console.error('updateUser model crash', e.message);
@@ -54,6 +50,7 @@ const deleteUser = async (id) => {
     console.error('deleteUser model', e.message);
   }
 };
+
 const getUserLogin = async (params) => {
   try {
     console.log(params);

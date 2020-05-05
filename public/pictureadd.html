@@ -4,16 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add a picture</title>
-    <link href="css/pictureaddstyle.css" rel="stylesheet">
+    <link href="./css/style.css" rel="stylesheet">
+    <link href="./css/pictureaddstyle.css" rel="stylesheet">
 </head>
 <body>
 <div>
     <ul class="navilista">
         <li class="navi"><a class="navilinkit" href="index.html">Etusivu</a></li>
         <li class="navi" id="navimiddle"><a class="navilinkit" href="#">Lisää kuva</a></li>
-        <li class="navi navilinkit dropdown"><a class="navilinkit" href="#">Login/Register</a>
+        <li class="navi dropdown login-wrapper"><a class="navilinkit" href="#">Login/Register</a>
             <div class="dropdown_content hide">
                 <h3>Login</h3>
+                <br>
                 <form id="login-form" class="light-border">
                     <div>
                         <label>Email:</label><br>
@@ -27,7 +29,9 @@
                         <button class="light-border" type="submit">Log In</button>
                     </div>
                 </form>
+                <br>
                 <h3>Register</h3>
+                <br>
                 <form class="light-border" id="add-user-form">
 
                     <div>
@@ -49,6 +53,13 @@
                                placeholder="Password" required>
                     </div><br>
                     <button class="light-border" type="submit">Save</button>
+                </form>
+            </div>
+        </li>
+        <li id="log-out" class="navi-logout-wrapper navilinkit dropdown"><a class="navilinkit user-info" href="#"></a>
+            <div class="dropdown_content hide">
+                <form class="light-border" id="logout-form">
+                    <button class="light-border" type="submit">Logout</button>
                 </form>
             </div>
         </li>
