@@ -57,7 +57,7 @@ const createPicCards = (pics) => {
 
 // AJAX call
 const getPics = async () => {
-    console.log('getCat token ', sessionStorage.getItem('token'));
+    console.log('getPic token ', sessionStorage.getItem('token'));
     try {
         const options = {
             headers: {
@@ -100,8 +100,8 @@ loginForm.addEventListener('submit', async (evt) => {
         loginWrapper.style.display = 'none';
         logoutWrapper.style.display = 'block';
         userInfo.innerHTML = `Logged in as ${json.user.name}`;
+        getPics();
     }
-    getPics();
 });
 
 // logout
