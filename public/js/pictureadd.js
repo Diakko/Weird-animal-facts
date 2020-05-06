@@ -20,6 +20,7 @@ addForm.addEventListener('submit', async (evt) => {
     const response = await fetch(url + '/pic', fetchOptions);
     const json = await response.json();
     console.log('add response', json);
+    alert('Picture added');
 });
 
 // get users to form options
@@ -80,7 +81,9 @@ loginForm.addEventListener('submit', async (evt) => {
         loginWrapper.style.display = 'none';
         logoutWrapper.style.display = 'block';
         userInfo.innerHTML = `Hello ${json.user.name}`;
+        alert('Logged in');
     }
+    getUsers();
 });
 
 // logout
@@ -126,7 +129,10 @@ addUserForm.addEventListener('submit', async (evt) => {
     loginWrapper.style.display = 'none';
     logoutWrapper.style.display = 'block';
     logOut.style.display = 'block';
+    alert('Remember to login');
+    getUsers();
 });
 
 if (sessionStorage.getItem('token')) {
+    getUsers();
 }

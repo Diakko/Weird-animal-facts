@@ -34,7 +34,7 @@ router.post('/',
     upload.single('pic'),
     [
         body('title', 'No empty titles allowed').isLength({min: 1}),
-        body('description', 'No empty descriptions allowed, max 160').isLength({min: 1, max: 220}),
+        body('description', 'No empty descriptions allowed, max 220').isLength({min: 1, max: 220}),
         body('user', 'Must choose user').isLength({min: 1})
     ], (req, res) => {
         console.log('tiedosto: ', req.file);

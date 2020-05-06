@@ -40,7 +40,7 @@ const createPicCards = (pics) => {
         h2.innerHTML = pic.title;
 
         const p1 = document.createElement('p');
-        p1.innerHTML = `<strong>Desc:</strong> ${pic.description} <br> <strong>Added by:</strong> ${pic.user}`;
+        p1.innerHTML = `<strong>Desc:</strong> ${pic.description}<br> <br> <br> <strong>Added by:</strong> ${pic.user}`;
 
         
         const li = document.createElement('li');
@@ -96,6 +96,7 @@ loginForm.addEventListener('submit', async (evt) => {
         logoutWrapper.style.display = 'block';
         userInfo.innerHTML = `Logged in as ${json.user.name}`;
         getPics();
+        alert('Logged in');
     }
 });
 
@@ -142,6 +143,7 @@ addUserForm.addEventListener('submit', async (evt) => {
     loginWrapper.style.display = 'none';
     logoutWrapper.style.display = 'block';
     logOut.style.display = 'block';
+    alert('Remember to login');
     getPics();
 });
 
